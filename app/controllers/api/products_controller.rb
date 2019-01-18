@@ -11,11 +11,15 @@ class Api::ProductsController < ApplicationController
   end
 
   def find_product_string
-    @product = params[:id].to_i
-    @searched_product = Product.find(@product)
-
+    @product_id = params[:id]
+    @searched_product = Product.find(@product_id)
     render 'find_product_string.json.jbuilder'
-    
+  end
+
+  def segment_product
+    @product_id = params[:id]
+    @searched_product = Product.find(@product_id)
+    render 'segment_product.json.jbuilder'
   end
 
 end
