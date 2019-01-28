@@ -7,9 +7,12 @@ class Product < ApplicationRecord
   validates :price, numericality: {greater_than: 0, less_than: 1_000_000}
 
   validates :description, presence: true 
-  validates :description, length: {in: 10..300}
+  # validates :description, length: {in: 10..300}
+  belongs_to :supplier
+  
 
-
+  has_many :images
+  
   def is_discounted?
     price < 40
   end
