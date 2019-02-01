@@ -20,3 +20,37 @@ Supplier.create!([
   {name: "Action Figure Faction", email: "everythingelseisjustatoy@yahoo.com", phone_number: "212-786-9087"},
   {name: "Nostalgia You Can Wear", email: "yourchildhood@hotmail.com", phone_number: "818-456-9021"}
 ])
+Category.create!([
+            {name: "Video Games"},
+            {name: "Toys"},
+            {name: "Apparel"}
+                ])
+ProductCategory.create([
+                        {product_id: 1, category_id: 1},
+                        {product_id: 2, category_id: 1},
+                        {product_id: 3, category_id: 1},
+                        {product_id: 4, category_id: 1},
+                        {product_id: 5, category_id: 1},
+                        {product_id: 6, category_id: 1},
+                        {product_id: 8, category_id: 1},
+                        {product_id: 9, category_id: 1},
+                        {product_id: 10, category_id: 1},
+                        {product_id: 11, category_id: 1},
+                        {product_id: 12, category_id: 1},
+                        {product_id: 14, category_id: 1},
+                        {product_id: 15, category_id: 1},
+                        {product_id: 16, category_id: 2},
+                        {product_id: 17, category_id: 2},
+                        {product_id: 18, category_id: 3}
+                        ])
+
+Product.create(name: "Small Soldiers T-Shirt", price: 15.99, description: "everything else is just a toy!", supplier_id: 3)
+
+Product.create(name: "Triforce T-shirt", price: 15.99, description: "Save Hyrule by wearing the power of the Triforce!", supplier_id: 3)
+
+ProductCategory.create([
+                        {product_id: 19, category_id: 2},
+                        {product_id: 19, category_id: 3},
+                        {product_id: 20, category_id: 1},
+                        {product_id: 20, category_id: 3}
+                ])
