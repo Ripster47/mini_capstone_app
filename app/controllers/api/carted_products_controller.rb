@@ -3,7 +3,6 @@ class Api::CartedProductsController < ApplicationController
 
   def index
     @carted_products = current_user.cart
-    # @carted_products = CartedProduct.where(user_id: current_user.id, status: "carted")
     render 'index.json.jbuilder'
   end
 
@@ -19,6 +18,12 @@ class Api::CartedProductsController < ApplicationController
     else
       render json: {errors: @carted_product.errors.full_messages}, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    carted_product = CartedProduct.find(params[:id])
+    carted_product.update(status: "removed")
+    render json: {message: "Successfully removed from cart"}
   end
 
 end
